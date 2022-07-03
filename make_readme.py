@@ -53,5 +53,5 @@ for date in d:
     data.append(d[date])
 
 # Plot & save
-july.heatmap(dates_list, data, title="Github Activity", cmap="github", colorbar=True)
+july.heatmap(dates_list, data, title="Activity", cmap="github", colorbar=True)
 plt.savefig("heatmap.png")
