@@ -1,4 +1,4 @@
-**16** problems are solved for all time!
+**17** problems are solved for all time!
 =========================================
 ![](heatmap.png)
 1. ./CodeForces/bitmasks/1421A.cpp
@@ -14,6 +14,7 @@
 11. ./CSES/Graphs/Building Roads.cpp
 12. ./CSES/Graphs/Counting Rooms.cpp
 13. ./CSES/Graphs/Labyrinth.cpp
-14. ./kick start/2022/practice1/B.cpp
-15. ./usaco/prefix_sum/Breed Counting.cpp
-16. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
+14. ./CSES/Graphs/Message Route.cpp
+15. ./kick start/2022/practice1/B.cpp
+16. ./usaco/prefix_sum/Breed Counting.cpp
+17. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
