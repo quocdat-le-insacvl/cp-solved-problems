@@ -1,4 +1,4 @@
-**17** problems are solved for all time!
+**21** problems are solved for all time!
 =========================================
 ![](heatmap.png)
 1. ./CodeForces/bitmasks/1421A.cpp
@@ -11,10 +11,14 @@
 8. ./CodeForces/Contests/805/1702A.cpp
 9. ./CodeForces/Contests/805/1702B.cpp
 10. ./CodeForces/Contests/805/1702D.cpp
-11. ./CSES/Graphs/Building Roads.cpp
-12. ./CSES/Graphs/Counting Rooms.cpp
-13. ./CSES/Graphs/Labyrinth.cpp
-14. ./CSES/Graphs/Message Route.cpp
-15. ./kick start/2022/practice1/B.cpp
-16. ./usaco/prefix_sum/Breed Counting.cpp
-17. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
+11. ./CodeForces/graphs/B - Mahmoud and Ehab and the bipartiteness.cpp
+12. ./CSES/Graphs/Building Roads.cpp
+13. ./CSES/Graphs/Building Teams .cpp
+14. ./CSES/Graphs/Counting Rooms.cpp
+15. ./CSES/Graphs/Labyrinth.cpp
+16. ./CSES/Graphs/Message Route.cpp
+17. ./kick start/2022/practice1/B.cpp
+18. ./usaco/graphs/Closing the Farm.cpp
+19. ./usaco/graphs/Icy Perimeter.cpp
+20. ./usaco/prefix_sum/Breed Counting.cpp
+21. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
