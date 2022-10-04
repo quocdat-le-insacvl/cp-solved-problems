@@ -1,4 +1,4 @@
-**30** problems are solved for all time!
+**31** problems are solved for all time!
 =========================================
 ![](heatmap.png)
 1. ./AtCoder/ABC/267/C.cpp
@@ -18,16 +18,17 @@
 15. ./CSES/DP/Coin Combinations II.cpp
 16. ./CSES/DP/Dice Combinations .cpp
 17. ./CSES/DP/Minimizing Coins.cpp
-18. ./CSES/Graphs/Building Roads.cpp
-19. ./CSES/Graphs/Building Teams .cpp
-20. ./CSES/Graphs/Counting Rooms.cpp
-21. ./CSES/Graphs/Labyrinth.cpp
-22. ./CSES/Graphs/Message Route.cpp
-23. ./CSES/Tree/Subordinates.cpp
-24. ./CSES/Tree/Tree Diameter.cpp
-25. ./CSES/Tree/Tree Distances II.cpp
-26. ./kick start/2022/practice1/B.cpp
-27. ./usaco/graphs/Closing the Farm.cpp
-28. ./usaco/graphs/Icy Perimeter.cpp
-29. ./usaco/prefix_sum/Breed Counting.cpp
-30. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
+18. ./CSES/DP/Removing Digits.cpp
+19. ./CSES/Graphs/Building Roads.cpp
+20. ./CSES/Graphs/Building Teams .cpp
+21. ./CSES/Graphs/Counting Rooms.cpp
+22. ./CSES/Graphs/Labyrinth.cpp
+23. ./CSES/Graphs/Message Route.cpp
+24. ./CSES/Tree/Subordinates.cpp
+25. ./CSES/Tree/Tree Diameter.cpp
+26. ./CSES/Tree/Tree Distances II.cpp
+27. ./kick start/2022/practice1/B.cpp
+28. ./usaco/graphs/Closing the Farm.cpp
+29. ./usaco/graphs/Icy Perimeter.cpp
+30. ./usaco/prefix_sum/Breed Counting.cpp
+31. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
