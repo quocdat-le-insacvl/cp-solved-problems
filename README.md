@@ -1,4 +1,4 @@
-**36** problems are solved for all time!
+**37** problems are solved for all time!
 =========================================
 ![](heatmap.png)
 1. ./AtCoder/ABC/267/C.cpp
@@ -28,12 +28,13 @@
 25. ./CSES/Graphs/Counting Rooms.cpp
 26. ./CSES/Graphs/Labyrinth.cpp
 27. ./CSES/Graphs/Message Route.cpp
-28. ./CSES/Tree/Subordinates.cpp
-29. ./CSES/Tree/Tree Diameter.cpp
-30. ./CSES/Tree/Tree Distances II.cpp
-31. ./kick start/2022/practice1/B.cpp
-32. ./Leetcode/Longest Common Subsequence.cpp
-33. ./usaco/graphs/Closing the Farm.cpp
-34. ./usaco/graphs/Icy Perimeter.cpp
-35. ./usaco/prefix_sum/Breed Counting.cpp
-36. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
+28. ./CSES/Graphs/Monsters.cpp
+29. ./CSES/Tree/Subordinates.cpp
+30. ./CSES/Tree/Tree Diameter.cpp
+31. ./CSES/Tree/Tree Distances II.cpp
+32. ./kick start/2022/practice1/B.cpp
+33. ./Leetcode/Longest Common Subsequence.cpp
+34. ./usaco/graphs/Closing the Farm.cpp
+35. ./usaco/graphs/Icy Perimeter.cpp
+36. ./usaco/prefix_sum/Breed Counting.cpp
+37. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
