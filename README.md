@@ -1,4 +1,4 @@
-**35** problems are solved for all time!
+**36** problems are solved for all time!
 =========================================
 ![](heatmap.png)
 1. ./AtCoder/ABC/267/C.cpp
@@ -19,20 +19,21 @@
 16. ./CSES/DP/Coin Combinations II.cpp
 17. ./CSES/DP/Counting Towers.cpp
 18. ./CSES/DP/Dice Combinations .cpp
-19. ./CSES/DP/Grid Paths.cpp
-20. ./CSES/DP/Minimizing Coins.cpp
-21. ./CSES/DP/Removing Digits.cpp
-22. ./CSES/Graphs/Building Roads.cpp
-23. ./CSES/Graphs/Building Teams .cpp
-24. ./CSES/Graphs/Counting Rooms.cpp
-25. ./CSES/Graphs/Labyrinth.cpp
-26. ./CSES/Graphs/Message Route.cpp
-27. ./CSES/Tree/Subordinates.cpp
-28. ./CSES/Tree/Tree Diameter.cpp
-29. ./CSES/Tree/Tree Distances II.cpp
-30. ./kick start/2022/practice1/B.cpp
-31. ./Leetcode/Longest Common Subsequence.cpp
-32. ./usaco/graphs/Closing the Farm.cpp
-33. ./usaco/graphs/Icy Perimeter.cpp
-34. ./usaco/prefix_sum/Breed Counting.cpp
-35. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
+19. ./CSES/DP/Edit Distance.cpp
+20. ./CSES/DP/Grid Paths.cpp
+21. ./CSES/DP/Minimizing Coins.cpp
+22. ./CSES/DP/Removing Digits.cpp
+23. ./CSES/Graphs/Building Roads.cpp
+24. ./CSES/Graphs/Building Teams .cpp
+25. ./CSES/Graphs/Counting Rooms.cpp
+26. ./CSES/Graphs/Labyrinth.cpp
+27. ./CSES/Graphs/Message Route.cpp
+28. ./CSES/Tree/Subordinates.cpp
+29. ./CSES/Tree/Tree Diameter.cpp
+30. ./CSES/Tree/Tree Distances II.cpp
+31. ./kick start/2022/practice1/B.cpp
+32. ./Leetcode/Longest Common Subsequence.cpp
+33. ./usaco/graphs/Closing the Farm.cpp
+34. ./usaco/graphs/Icy Perimeter.cpp
+35. ./usaco/prefix_sum/Breed Counting.cpp
+36. ./usaco/prefix_sum/Subsequences Summing to Sevens.cpp
