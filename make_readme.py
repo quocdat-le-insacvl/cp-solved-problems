@@ -26,11 +26,11 @@ with open("README.md", "w") as f:
     f.write("![](heatmap.png)\n")
 
     # Print problems
-    for index, problem in enumerate(result):
-        f.write(str(index + 1) + ". " + problem + "\n")
+    # for index, problem in enumerate(result):
+        # f.write(str(index + 1) + ". " + problem + "\n")
 
 # Init
-dates = date_range("2022-01-01", "2022-12-31")
+dates = date_range("2023-01-01", "2023-12-31")
 d = defaultdict(int)
 for date in dates:
     d[date] = 0
