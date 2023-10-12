@@ -37,7 +37,7 @@ for date in dates:
 
 # get files's date creation
 date_files = [
-    datetime.utcfromtimestamp(os.path.getctime(path)).strftime("%Y-%m-%d")
+    datetime.utcfromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d")
     for path in result
 ]
 date_files = [datetime.strptime(date, "%Y-%m-%d").date() for date in date_files]
@@ -46,6 +46,15 @@ date_files = [datetime.strptime(date, "%Y-%m-%d").date() for date in date_files]
 for date in date_files:
     d[date] += 1
 
+for date in d:
+    if str(date) in ["2023-10-11","2023-10-07"] :
+        d[date] = 5
+    # 2023-10-7 : 45
+    if d[date] != 0:
+        print(f"{date} : {d[date]}")
+        
+
+
 # Export to list, then give it to july.heatmap
 dates_list, data = [], []
 for date in d:
@@ -53,5 +62,6 @@ for date in d:
     data.append(d[date])
 
 # Plot & save
-july.heatmap(dates_list, data, title="Activity", cmap="github", colorbar=True)
+# july.heatmap(dates_list, data, title="Activity", cmap="github", colorbar=True)
+july.month_plot(dates_list, data, month=10, value_label=True, ax=0)
 plt.savefig("heatmap.png")
