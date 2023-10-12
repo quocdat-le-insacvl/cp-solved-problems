@@ -72,18 +72,19 @@ import matplotlib.pyplot as plt
 from pylab import *
 months.append(11)
 
-subplots_adjust(hspace=0.400)
-# subplots_adjust(wspace=1.000)
+# subplots_adjust(hspace=0.400)
+# subplots_adjust(wspace=1.900)
 number_of_subplots=len(months)
 
-for i,v in enumerate(range(number_of_subplots)):
-    v = v+1
-    print(i, v)
-    print(months[i])
-    ax1 = subplot(number_of_subplots,1, v)
-    july.month_plot(dates_list, data, month=months[i], value_label=True, ax=ax1)
+from mpl_toolkits.axes_grid1 import Grid
+fig = plt.figure()
+grid = Grid(fig, rect=111, nrows_ncols=(1,2),
+            axes_pad=0.25, label_mode='L',
+            )
+for i, ax in enumerate(grid):
+    july.month_plot(dates_list, data, month=months[i], value_label=True, ax=ax)
 
-# july.month_plot(dates_list, data, month=10, value_label=True, ax=0)
-# july.month_plot(dates_list, data, month=11, value_label=True, ax=0)
-# july.calendar_plot(dates_list, data)
+
+plt.tight_layout()
+
 plt.savefig("heatmap.png")
