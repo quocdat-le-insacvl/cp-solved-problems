@@ -18,7 +18,7 @@ result = [
 
 with open("README.md", "w") as f:
     # Title
-    title = f"**{len(result)}** problems are solved for all time!\n"
+    title = f"**{len(result)}** problems have been solved for all time!\n"
     f.write(title)
     f.write("=" * len(title) + "\n")
 
@@ -53,7 +53,12 @@ for date in d:
     if d[date] != 0:
         print(f"{date} : {d[date]}")
         
-
+# get month not zero
+months = []
+for date in d:
+    if d[date] != 0:
+        if date.month not in months:
+            months.append(date.month)
 
 # Export to list, then give it to july.heatmap
 dates_list, data = [], []
@@ -63,5 +68,22 @@ for date in d:
 
 # Plot & save
 # july.heatmap(dates_list, data, title="Activity", cmap="github", colorbar=True)
-july.month_plot(dates_list, data, month=10, value_label=True, ax=0)
+import matplotlib.pyplot as plt
+from pylab import *
+months.append(11)
+
+subplots_adjust(hspace=0.400)
+# subplots_adjust(wspace=1.000)
+number_of_subplots=len(months)
+
+for i,v in enumerate(range(number_of_subplots)):
+    v = v+1
+    print(i, v)
+    print(months[i])
+    ax1 = subplot(number_of_subplots,1, v)
+    july.month_plot(dates_list, data, month=months[i], value_label=True, ax=ax1)
+
+# july.month_plot(dates_list, data, month=10, value_label=True, ax=0)
+# july.month_plot(dates_list, data, month=11, value_label=True, ax=0)
+# july.calendar_plot(dates_list, data)
 plt.savefig("heatmap.png")
