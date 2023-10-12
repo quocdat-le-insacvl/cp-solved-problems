@@ -1,4 +1,13 @@
 # Ignore files with .in, .out, and .txt extensions in all directories
+*
 **/*.in
 **/*.out
 **/*.txt
+**/combined.cpp
+!*/
+!*.cpp
+!*.c
+!*.md
+!*.py
+!*.png
+

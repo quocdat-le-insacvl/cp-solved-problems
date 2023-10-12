@@ -74,10 +74,11 @@ void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ", "; 
 void _print() {cerr << "]\n";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
+//#define dbg(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
 #ifdef DEBUG
-#define dbg(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
+#define dbg(...) cerr << "\033[91m"<<__func__<<":"<<__LINE__<<" [" << #__VA_ARGS__ << "] = ["; _print(__VA_ARGS__); cerr << "\033[39m" << endl;
 #else
-#define dbg(x...)
+#define dbg(...)
 #endif
 
 
@@ -309,63 +310,42 @@ void yes(int y) {
 
 void solve() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
-    cout << fixed << setprecision(2);
-    int N; read(N);
-    int M; read(M);
-    vll X(N, INF), Y(N, INF); 
-    X[0] = Y[0] = 0;
-    vvi res;
-    repi(M) {
-        int a, b, x, y; read(a, b, x, y);
+    //cout << fixed << setprecision(2);
+    int n, m; read(n, m);
+    vt<vt<vt<int>>> G(n);
+    repi(m) {
+        int a, b, x, y;
+        read( a, b, x, y);
         a--, b--;
-        if (X[a] == INF || Y[a] == INF) {
-            //auto k = {a,b,x,y};
-            if (X[b] != INF && Y[b] != INF) {
-                X[a] = X[b] - x;
-                Y[a] = Y[b] - y;
-            } else {
-                res.pb(vi({a,b,x,y}));
+        G[a].pb({b, x, y});
+        G[b].pb({a, -x, -y});
+    }
+    //print("HI");
+    vll X(n, INF), Y(n, INF);
+    X[0] = Y[0] = 0;
+    vb vis(n);
+    vi qq = {0};
+    while (sz(qq) > 0) {
+        int a = qq.bk; qq.pop_back();
+        // iterate through G
+        vis[a] = 1;
+        EACH(v, G[a]) {
+            int b=v[0],x=v[1],y = v[2];
+            if (!vis[b]) {
+                qq.pb(b);
             }
-        } else{
             X[b] = X[a] + x;
             Y[b] = Y[a] + y;
         }
     }
-
-    while (sz(res) > 0) {
-        sort(all(res));
-        vvi new_res;
-        int sz_res = sz(res);
-        EACH(e, res) {
-            int a, b, x, y;
-            a = e[0], b = e[1], x=e[2], y=e[3];
-            if (X[a] == INF || Y[a] == INF) {
-                //auto k = {a,b,x,y};
-                if (X[b] != INF && Y[b] != INF) {
-                    X[a] = X[b] - x;
-                    Y[a] = Y[b] - y;
-                } else {
-                    new_res.pb(vi({a,b,x,y}));
-                }
-            } else{
-                X[b] = X[a] + x;
-                Y[b] = Y[a] + y;
-            }
-        }
-        if (sz_res == sz(new_res)) {
-            break;
-        }
-        res = new_res;
-    }
-    //vi A(N);read(A);
-    repi(N) {
+    dbg(X, Y);
+    repi(n) {
         if (X[i] == INF) {
             print("undecidable");
+        } else {
+            print(X[i], Y[i]);
         }
-        else
-        print(X[i], Y[i]);
     }
-
 
 }
 
