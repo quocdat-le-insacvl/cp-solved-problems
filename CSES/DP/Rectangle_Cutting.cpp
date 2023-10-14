@@ -33,6 +33,7 @@ using P = pair<T,T>; using vP = vector<P>; using Line = pair<P,P>;
 #define f first
 #define s second
 #define MIN_LL -1000000000000000000ll
+#define MAX_LL 9223372036854775807ll
 #define INF 2147483647
 typedef long long ll;
 typedef pair<int, int> pii;
@@ -310,35 +311,22 @@ void yes(int y) {
 void solve() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     cout << fixed << setprecision(2);
-    int M; read(M);
-    vector<string> S(3);
-    read(S);
-    repi(10) {
-        // CHeck if i exists in all 3 Strings
-        vvi ind(3);
-        bool skip = false;
-        repj(3) {
-            // Find location of [i] -> [index1, 2, ..]
-            char c = i + '0';
-            repk(sz(S[i])) {
-                if (k == c) {
-                    ind[i].pb(k);
-                }
-            }
-            if (sz(ind) == 0) {
-                skip = true; break;
+    int A, B; read(A, B);
+    int N = max(A, B);
+    vvll dp(N +1, vll(N+1));
+    rep(i, 1, N+1) {
+        rep(j, 1, N+1){
+            if (i==j) dp[i][j] = 0;
+            else{
+                dp[i][j] = MAX_LL;
+                rep(ca, 1, (int) i/2 +1) 
+                    dp[i][j] = min(dp[i][j], 1 + dp[ca][j] + dp[i-ca][j]);
+                rep(cb, 1, (int) j/2 +1) 
+                    dp[i][j] = min(dp[i][j], 1+ dp[i][cb] + dp[i][j - cb]);
             }
         }
-        if (skip) continue;
-        // calculate the number of time theses find overlap
-        // choose 1 number for each, but keep in mind that: we can only press 1 button at a time
-        // => greedy
-
-
-
     }
-    
-
+    print(dp[A][B]);
 }
 
 

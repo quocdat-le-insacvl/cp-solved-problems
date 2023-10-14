@@ -310,34 +310,9 @@ void yes(int y) {
 void solve() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     cout << fixed << setprecision(2);
-    int M; read(M);
-    vector<string> S(3);
-    read(S);
-    repi(10) {
-        // CHeck if i exists in all 3 Strings
-        vvi ind(3);
-        bool skip = false;
-        repj(3) {
-            // Find location of [i] -> [index1, 2, ..]
-            char c = i + '0';
-            repk(sz(S[i])) {
-                if (k == c) {
-                    ind[i].pb(k);
-                }
-            }
-            if (sz(ind) == 0) {
-                skip = true; break;
-            }
-        }
-        if (skip) continue;
-        // calculate the number of time theses find overlap
-        // choose 1 number for each, but keep in mind that: we can only press 1 button at a time
-        // => greedy
+    int N; read(N);
+    vi A(N);read(A);
 
-
-
-    }
-    
 
 }
 

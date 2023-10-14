@@ -74,11 +74,6 @@ void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ", "; 
 void _print() {cerr << "]\n";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
-#ifdef DEBUG
-#define dbg(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
-#else
-#define dbg(x...)
-#endif
 
 
 int max(int a, int b, int c) {
@@ -306,50 +301,175 @@ void yes(int y) {
 }
 
 #define MOD 1000000007
+struct dsu {
+  public:
+    dsu() : _n(0) {}
+    explicit dsu(int n) : _n(n), parent_or_size(n, -1) {}
+
+    int merge(int a, int b) {
+        assert(0 <= a && a < _n);
+        assert(0 <= b && b < _n);
+        int x = leader(a), y = leader(b);
+        if (x == y) return x;
+        if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x, y);
+        parent_or_size[x] += parent_or_size[y];
+        parent_or_size[y] = x;
+        return x;
+    }
+
+    bool same(int a, int b) {
+        assert(0 <= a && a < _n);
+        assert(0 <= b && b < _n);
+        return leader(a) == leader(b);
+    }
+
+    int leader(int a) {
+        assert(0 <= a && a < _n);
+        if (parent_or_size[a] < 0) return a;
+        return parent_or_size[a] = leader(parent_or_size[a]);
+    }
+
+    int size(int a) {
+        assert(0 <= a && a < _n);
+        return -parent_or_size[leader(a)];
+    }
+
+    std::vector<std::vector<int>> groups() {
+        std::vector<int> leader_buf(_n), group_size(_n);
+        for (int i = 0; i < _n; i++) {
+            leader_buf[i] = leader(i);
+            group_size[leader_buf[i]]++;
+        }
+        std::vector<std::vector<int>> result(_n);
+        for (int i = 0; i < _n; i++) {
+            result[i].reserve(group_size[i]);
+        }
+        for (int i = 0; i < _n; i++) {
+            result[leader_buf[i]].push_back(i);
+        }
+        result.erase(
+            std::remove_if(result.begin(), result.end(),
+                           [&](const std::vector<int>& v) { return v.empty(); }),
+            result.end());
+        return result;
+    }
+
+  private:
+    int _n;
+    // root node: -1 * component size
+    // otherwise: parent
+    std::vector<int> parent_or_size;
+};
+
+
 
 void solve() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     cout << fixed << setprecision(2);
+    int N; read(N);
     int M; read(M);
-    vector<string> S(3);
-    read(S);
-    repi(10) {
-        // CHeck if i exists in all 3 Strings
-        vvi ind(3);
-        bool skip = false;
-        repj(3) {
-            // Find location of [i] -> [index1, 2, ..]
-            char c = i + '0';
-            repk(sz(S[i])) {
-                if (k == c) {
-                    ind[i].pb(k);
-                }
+    //vt<string> S(M); read(S);
+    vt<string> S;
+    vvi D(N);
+    repi(M) {
+        string A, B; read(A, B);
+        if (find(all(S), A) == S.end()) {
+            S.pb(A);
+        }
+        if (find(all(S), B) == S.end()) {
+            S.pb(B);
+        }
+        int a, b; 
+        repj(sz(S)) {
+            //print(sz(S), j);
+            if (S[j] == A) {
+                a = j;
             }
-            if (sz(ind) == 0) {
-                skip = true; break;
+            if (S[j] == B) {
+                b = j;
             }
         }
-        if (skip) continue;
-        // calculate the number of time theses find overlap
-        // choose 1 number for each, but keep in mind that: we can only press 1 button at a time
-        // => greedy
-
-
-
+        //print(S);
+        //print(D);
+        //print(a, b);
+        //D[b].pb(a);
+        D[a].pb(b);
     }
-    
-
+    //int nx = 0;
+    //print(S);
+    //print(D);
+    vi sol;
+    repi(N){
+        if (sz(D[i]) == 1){
+            sol.pb(i);
+        }
+    }
+    vi full_con;
+    repi(N){
+        //if (sz(D[i]) > 1) continue;
+        //print(S[i]);
+        vb was(N); 
+        int start = i;
+        int last_vis ;
+        vi stac = {start};
+        while (sz(stac) > 0) {
+            //print(was);
+            int nx = stac.bk;
+            stac.pop_back();
+            if (!was[nx]){ 
+                was[nx] = 1;last_vis = nx;
+            }
+            else {continue;}
+            EACH(x, D[nx]) {
+                if (!was[x]) {
+                    stac.pb(x);
+                }
+            }
+        }
+        bool good = true;
+        repj(N) {
+            if (!was[j]) {
+                good = false;
+                break;
+            }
+        }
+        if (good) {
+            //print(S[start]);
+            full_con.pb(start);
+            //print(was);
+            //return;
+        }
+    }
+    //print(D);
+    //print(sol);
+    //print(sol);
+    //print(full_con);
+    sort(rall(full_con));
+    EACH( x, full_con) {
+        if (S[x] =="jaqsh")
+            print(S[x]);
+        if (S[x] =="hqezj")
+            print(S[x]);
+        
+        if (S[x] =="klcbu")
+            print(S[x]);
+        
+    }
+    EACH( x, full_con) {
+        if (sz(D[x]) == 1) {
+            print(S[x]);
+            return;
+        }
+    }
+    //print(full_con);
 }
 
 
-int main() {
-    int t = 1;
-    //read(t);
-    repi1(t+1){
-         //write("Case #", i, ": ");
-        solve();
-    }
-    return 0;
+#include "exercise.hpp"
+
+ContestExerciseImpl::ContestExerciseImpl() : Exercise() {}
+
+    void ContestExerciseImpl::main() {
+    solve();
+
 }
-
-
