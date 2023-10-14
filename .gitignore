@@ -3,11 +3,10 @@
 **/*.in
 **/*.out
 **/*.txt
-**/combined.cpp
 !*/
 !*.cpp
 !*.c
 !*.md
 !*.py
 !*.png
-
+**/combined.cpp
