@@ -1,3 +1,3 @@
-**71** problems have been solved for all time!
+**80** problems have been solved for all time!
 ===============================================
 ![](heatmap.png)
