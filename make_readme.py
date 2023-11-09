@@ -13,7 +13,7 @@ result = [
     os.path.join(dp, f)
     for dp, dn, filenames in os.walk(PATH)
     for f in filenames
-    if os.path.splitext(f)[1] == ".cpp"
+    if os.path.splitext(f)[1] in [".cpp", ".py"]
 ]
 
 with open("README.md", "w") as f:
