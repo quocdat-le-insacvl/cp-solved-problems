@@ -15,6 +15,13 @@ int main() {
   cin >> n;
   vector<string> s(3); 
   cin >> s[0] >> s[1] >> s[2];
+  vector<vector<int> ith(3);
+  
+  for (int i=0; i<=9 ; i++) {
+    for (int j=0; j<n; j++) {
+
+    }
+  }
 
 
 
