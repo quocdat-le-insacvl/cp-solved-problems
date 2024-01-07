@@ -70,7 +70,9 @@ for date in d:
 # july.heatmap(dates_list, data, title="Activity", cmap="github", colorbar=True)
 import matplotlib.pyplot as plt
 from pylab import *
-months.append(11)
+# months.append(11)
+# months.append(11)
+months.append(1)
 
 # subplots_adjust(hspace=0.400)
 # subplots_adjust(wspace=1.900)
