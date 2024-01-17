@@ -10,23 +10,36 @@ using namespace std;
 #define dbg(...) 42
 #endif
 
+vector<pair<int,int>> qq;
+void pm(int s, int e){
+	qq.push_back({s,e});
+}
+
+void pm_(int s, int e){
+	cout << s << ' ' << e << '\n';
+}
+
+void hanoi(int n, int start, int end) {
+	if (n == 1){
+		pm(start,end);
+	} else{
+		int inter = 6-start-end;
+		hanoi(n-1,start, inter);
+		pm(start, end);
+		hanoi(n-1, inter,end);
+	}
+}
+
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
 	int n; cin >> n;
-	deque<int> l, m , r;
-	for (int i=0; i<n; i++) {
-		l.push_front(i);
-	}
-	unordered_set<string> dv;
-	string s;
-	for (auto x: l) {
-		s += to_string(x);
+	hanoi(n, 1, 3);
+
+	cout << size(qq) << '\n';
+	for(auto [s,e]: qq){
+		pm_(s,e);
 	}
 
-	// res + save string
-
-
-	dbg(l);
   return 0;
 }

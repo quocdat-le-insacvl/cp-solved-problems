@@ -30,7 +30,8 @@ with open("README.md", "w") as f:
         # f.write(str(index + 1) + ". " + problem + "\n")
 
 # Init
-dates = date_range("2023-01-01", "2023-12-31")
+# dates = date_range("2023-01-01", "2023-12-31")
+dates = date_range("2024-01-01", "2024-01-31")
 d = defaultdict(int)
 for date in dates:
     d[date] = 0
