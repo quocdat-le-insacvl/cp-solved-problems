@@ -58,7 +58,7 @@ template<typename T, typename V>
 void __print(const pair<T, V> &x) {cerr << '('; __print(x.f); cerr << "|"; __print(x.s); cerr << ')';}
 template<typename T>
 void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? ", " : ""), __print(i); cerr << "}";}
-void _print() {cerr << "]\n";}
+void _print() {cerr << "]";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
 #ifdef DEBUG
